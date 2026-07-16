@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Setup – Clarity Fleet</title>
+  <meta name="description" content="Book a Clarity Fleet GPS tracker installation for your fleet. Quick setup, flat $19.99 AUD/van/month pricing.">
+
+  <!-- TODO: paste Google Ads gtag conversion snippet here -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="index.html">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_shipping</span>
+      Clarity Fleet
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <a class="btn btn-primary" href="index.html">← Back to site</a>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ── -->
+<div class="page-header">
+  <div class="container page-header-inner">
+    <h1 class="text-display" style="font-size:clamp(1.875rem,4vw,2.75rem);">Book Your Setup</h1>
+    <p class="text-body-lg text-muted mt-2" style="max-width:36rem;">
+      Secure your installation date for the Clarity Fleet GPS tracking system. Simple, transparent pricing tailored for Australian fleets.
+    </p>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="container">
+
+  <!-- Thank-you state (hidden until submit) -->
+  <div class="thankyou-state" id="thankYouState">
+    <div class="ty-icon-wrap">
+      <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">check_circle</span>
+    </div>
+    <h2 class="ty-headline">You're Booked In!</h2>
+    <p class="ty-sub">Our team will be in touch shortly to lock in a time that works for you. We're looking forward to it — welcome aboard.</p>
+
+    <div class="ty-next">
+      <p class="ty-next-heading">What happens next</p>
+      <div class="ty-next-list">
+        <div class="ty-next-item">
+          <div class="ty-next-num">1</div>
+          <p class="ty-next-text"><strong>We'll call you within 1 business day</strong>Our local team will reach out to confirm your installation date and answer any questions.</p>
+        </div>
+        <div class="ty-next-item">
+          <div class="ty-next-num">2</div>
+          <p class="ty-next-text"><strong>Installation — under 30 minutes per vehicle</strong>Our technician installs the tracker under the bonnet with minimal disruption to your fleet.</p>
+        </div>
+        <div class="ty-next-item">
+          <div class="ty-next-num">3</div>
+          <p class="ty-next-text"><strong>You're live on the platform</strong>We set you up on the Clarity Fleet portal — desktop and mobile — and you're tracking from day one.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ty-actions">
+      <a class="btn btn-primary btn-primary-lg" href="tel:1800000000">
+        <span class="material-symbols-outlined">call</span>
+        1800 000 000
+      </a>
+      <a class="btn btn-outline btn-primary-lg" href="index.html">← Back to site</a>
+    </div>
+  </div>
+
+  <!-- Booking canvas (hidden after submit) -->
+  <div class="booking-canvas">
+
+    <!-- Progress stepper -->
+    <div class="stepper" id="stepperNav">
+      <div class="stepper-step active" data-stepper-step="1">
+        <div class="stepper-circle">
+          <span class="stepper-num">1</span>
+          <span class="material-symbols-outlined stepper-check" style="font-variation-settings:'FILL' 1;">check</span>
+        </div>
+        <span class="stepper-label">What to track</span>
+      </div>
+      <div class="stepper-track"></div>
+      <div class="stepper-step" data-stepper-step="2">
+        <div class="stepper-circle">
+          <span class="stepper-num">2</span>
+          <span class="material-symbols-outlined stepper-check" style="font-variation-settings:'FILL' 1;">check</span>
+        </div>
+        <span class="stepper-label">Fleet size</span>
+      </div>
+      <div class="stepper-track"></div>
+      <div class="stepper-step" data-stepper-step="3">
+        <div class="stepper-circle">
+          <span class="stepper-num">3</span>
+          <span class="material-symbols-outlined stepper-check" style="font-variation-settings:'FILL' 1;">check</span>
+        </div>
+        <span class="stepper-label">Your concern</span>
+      </div>
+      <div class="stepper-track"></div>
+      <div class="stepper-step" data-stepper-step="4">
+        <div class="stepper-circle">
+          <span class="stepper-num">4</span>
+          <span class="material-symbols-outlined stepper-check" style="font-variation-settings:'FILL' 1;">check</span>
+        </div>
+        <span class="stepper-label">Contact</span>
+      </div>
+    </div>
+    <p class="stepper-counter" id="stepCounter">Step 1 of 4</p>
+
+    <form id="bookingForm" novalidate>
+
+      <!-- ── STEP 1: What to track ── -->
+      <div class="step-panel" data-step="1">
+        <div class="step-heading">
+          <h2>What do you need to track?</h2>
+          <p>Select all that apply</p>
+        </div>
+
+        <div class="grid-2">
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">directions_car</span>Utes / Vans</span>
+            <input type="checkbox" name="track_type" value="utes-vans">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">local_shipping</span>Trucks</span>
+            <input type="checkbox" name="track_type" value="trucks">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">rv_hookup</span>Trailers / Equipment</span>
+            <input type="checkbox" name="track_type" value="trailers-equipment">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">category</span>Other</span>
+            <input type="checkbox" name="track_type" value="other">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn btn-primary btn-primary-lg" type="button" data-next="2">Next →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 2: Fleet size ── -->
+      <div class="step-panel hidden" data-step="2">
+        <div class="step-heading">
+          <h2>How many vehicles in your fleet?</h2>
+        </div>
+
+        <div class="grid-2">
+          <label class="option-card">
+            <span class="option-card-label">1–2</span>
+            <input type="radio" name="fleet_size" value="1-2">
+            <span class="custom-control custom-control--radio" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label">3–10</span>
+            <input type="radio" name="fleet_size" value="3-10">
+            <span class="custom-control custom-control--radio" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label">11–25</span>
+            <input type="radio" name="fleet_size" value="11-25">
+            <span class="custom-control custom-control--radio" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label">26+</span>
+            <input type="radio" name="fleet_size" value="26+">
+            <span class="custom-control custom-control--radio" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="step-nav has-back">
+          <button class="btn btn-outline" type="button" data-back="1">← Back</button>
+          <button class="btn btn-primary btn-primary-lg" type="button" data-next="3">Next →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Main concerns ── -->
+      <div class="step-panel hidden" data-step="3">
+        <div class="step-heading">
+          <h2>What are your biggest concerns?</h2>
+          <p>Select all that apply.</p>
+        </div>
+
+        <div class="option-list">
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">location_searching</span>I can't see where my vehicles are</span>
+            <input type="checkbox" name="main_concern" value="visibility">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">bedtime</span>After-hours misuse or theft</span>
+            <input type="checkbox" name="main_concern" value="after-hours">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">event_available</span>Missed maintenance or rego renewals</span>
+            <input type="checkbox" name="main_concern" value="maintenance">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+          <label class="option-card">
+            <span class="option-card-label"><span class="material-symbols-outlined">more_horiz</span>Something else</span>
+            <input type="checkbox" name="main_concern" value="other">
+            <span class="custom-control custom-control--checkbox" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <div class="step-nav has-back">
+          <button class="btn btn-outline" type="button" data-back="2">← Back</button>
+          <button class="btn btn-primary btn-primary-lg" type="button" data-next="4">Next →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 4: Contact form ── -->
+      <div class="step-panel hidden" data-step="4">
+        <div class="step-heading">
+          <h2>Tell us about your business</h2>
+          <p>Your details help us schedule your installation and ensure local compliance.</p>
+        </div>
+
+        <div class="card step-contact-card">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Full Name <span style="color:#dc2626;">*</span></label>
+              <input class="form-input" id="fullName" type="text" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="businessName">Business Name <span style="color:#dc2626;">*</span></label>
+              <input class="form-input" id="businessName" type="text" placeholder="Smith Plumbing Pty Ltd" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2 mt-4">
+            <div class="form-group">
+              <label class="form-label" for="email">Work Email <span style="color:#dc2626;">*</span></label>
+              <input class="form-input" id="email" type="email" placeholder="jane@smithplumbing.com.au" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Contact Phone Number <span style="color:#dc2626;">*</span></label>
+              <input class="form-input" id="phone" type="tel" placeholder="0400 000 000" required>
+            </div>
+          </div>
+
+          <div class="form-group mt-4">
+            <label class="form-label" for="suburb">Suburb <span style="color:#dc2626;">*</span></label>
+            <input class="form-input" id="suburb" type="text" placeholder="Parramatta NSW" required>
+          </div>
+
+          <div class="form-group mt-4">
+            <label class="form-label" for="message">Notes (optional)</label>
+            <textarea class="form-textarea" id="message" placeholder="Anything we should know before your installation?"></textarea>
+          </div>
+
+          <div class="form-actions-wrap">
+            <div class="trust-banner">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">shield_lock</span>
+              Your details are encrypted and stored securely in accordance with Australian Privacy Act obligations.
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-outline" type="button" data-back="3">← Back</button>
+              <button class="btn btn-primary btn-primary-lg" type="submit" style="justify-content:center;">
+                <span class="material-symbols-outlined">calendar_month</span>
+                Book My Setup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Contextual fleet image -->
+    <div class="img-strip">
+      <img src="booking-fleet.jpg" alt="Australian fleet vans on the road">
+      <div class="img-strip-overlay"></div>
+      <div class="img-strip-caption">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">verified</span>
+        Trusted by Australian fleet operators
+      </div>
+    </div>
+
+    <!-- Assistance card -->
+    <div class="assist-card">
+      <div>
+        <p class="text-title">Need assistance?</p>
+        <p class="text-body text-muted">Our local team is ready to help configure your specific fleet requirements.</p>
+      </div>
+      <a href="tel:1800000000">
+        <span class="material-symbols-outlined">call</span>
+        1800 000 000
+      </a>
+    </div>
+
+  </div><!-- /.booking-canvas -->
+</main>
+
+<!-- ── PRE-FOOTER ── -->
+<section class="prefooter">
+  <div class="container prefooter-inner">
+    <div>
+      <p class="prefooter-headline">Get your fleet on one screen.</p>
+      <p class="prefooter-sub">Flat $19/van/month. No lock-in. Installation by our local team.</p>
+    </div>
+    <a class="btn btn-white btn-primary-lg" href="book.html">Book My Setup →</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-main">
+      <div class="footer-cols">
+
+        <!-- Brand column -->
+        <div>
+          <a class="footer-brand" href="index.html">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_shipping</span>
+            Clarity Fleet
+          </a>
+          <p class="footer-tagline">Live GPS tracking for Australian tradies and small fleets. Professional installation, flat pricing, no surprises.</p>
+          <p class="footer-origin">Proudly Australian Owned &amp; Operated</p>
+        </div>
+
+        <!-- Product column -->
+        <div>
+          <p class="footer-col-heading">Product</p>
+          <ul class="footer-col-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="book.html">Book Now</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact column -->
+        <div>
+          <p class="footer-col-heading">Contact</p>
+          <ul class="footer-col-links">
+            <!-- TODO: replace placeholder phone number -->
+            <li><a href="tel:1800000000">1800 000 000</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal column -->
+        <div>
+          <p class="footer-col-heading">Legal</p>
+          <ul class="footer-col-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="footer-trust">
+      <span>100+ Vans Fitted</span>
+      <span class="footer-trust-sep">·</span>
+      <span>Teltonika Hardware</span>
+      <span class="footer-trust-sep">·</span>
+      <span>Flat $19/Van/Month</span>
+      <!-- TODO: add client logos here once available -->
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>&copy; 2026 Clarity Fleet · ABN 52 871 904 331 · Made in Australia</span>
+      <ul class="footer-links">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<script src="booking-flow.js"></script>
+</body>
+</html>
