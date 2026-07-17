@@ -27,6 +27,7 @@
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#about">About</a></li>
     </ul>
@@ -234,6 +235,98 @@
   </div>
 </section>
 
+<!-- ── FAQ ── -->
+<section class="section faq-section" id="faq">
+  <div class="container text-center max-w-2xl">
+    <h2 class="text-headline">Frequently Asked Questions</h2>
+    <p class="text-body-lg text-muted mt-2">Common questions from Australian fleet operators.</p>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How quickly can we get set up?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>Once you book, our team is in touch within 1 business day to schedule installation. Each vehicle takes under 30 minutes to fit, with minimal disruption to your day. If you've got more than a couple of vehicles, no need to bring them to us — we'll come to you and fit the whole fleet on site.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What does installation involve?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>Each tracker is professionally installed by our technician, wired directly into your vehicle's ignition circuit — a permanent, secure fit, not a plug-in dongle that can be bumped loose or unplugged. It's fitted neatly under the dashboard, completely out of sight, so there's nothing visible for anyone to tamper with or notice.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is there a lock-in contract?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>No lock-in, no long-term contract, no surprises. Cancel anytime.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What if my fleet grows?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>As your fleet grows, we simply add the new tracker to your vehicle and connect it straight into your existing dashboard, right alongside the rest of your fleet.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What does the tracker actually show me?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>Live GPS location, ignition status, and movement history — full visibility of where every vehicle is and whether it's running. It doesn't read engine fault codes or full vehicle diagnostics.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What happens if a vehicle is used after hours or stolen?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>You'll get an alert the moment a vehicle moves outside your set working hours, so you can act on it straight away.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is my fleet data kept private?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Your fleet data is only ever accessible to you and your team — no other Clarity Fleet customer can see it, and it's never shared or sold to third parties. Everything's hosted on a secure server, and your data is used for one purpose only: powering your own dashboard so you can see your own fleet.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are you a local Australian business?
+          <span class="material-symbols-outlined faq-icon">add</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — Clarity Fleet is Australian owned and operated. When you call, you're speaking directly to the person who built and runs the platform, not a call centre.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── PRICING ── -->
 <section class="section" style="background:#f3f4f5;" id="pricing">
   <div class="container text-center max-w-xl">
@@ -362,6 +455,31 @@
     document.querySelectorAll('.book-now-link').forEach(function (el) {
       var base = el.getAttribute('href').split('?')[0];
       el.setAttribute('href', base + qs);
+    });
+  })();
+
+  // FAQ accordion
+  (function () {
+    document.querySelectorAll('.faq-question').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var isOpen = item.classList.contains('open');
+
+        // Close all open items first
+        document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          openItem.querySelector('.faq-answer').style.maxHeight = '0';
+        });
+
+        // Open this item if it was previously closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
     });
   })();
 </script>
